@@ -1,0 +1,45 @@
+{
+    "name": "yoruchiaki/php-webase",
+    "description": "Package description here.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yoruchiaki",
+            "email": "saberlove@me.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "guzzlehttp/guzzle": "^7.3",
+        "ext-bcmath": "*",
+        "fakerphp/faker": "^1.21"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yoruchiaki\\Webase\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yoruchiaki\\Webase\\ServiceProvider"
+            ],
+            "aliases": {
+                "Webase": "Yoruchiaki\\Webase\\Facade"
+            }
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.1"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php vendor/bin/testbench package:discover --ansi"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
+    }
+}
